@@ -10,6 +10,9 @@ Route::get('/', function () {
 }); 
 
 Route::view('/admin', 'admin.dashboard');
+
+Route::get('/admin', [UserController::class, 'index']);
+
 Route::view('/landing', 'landing');
 
 Route::get('/usuarios/novo', [UserController::class, 'create']);
