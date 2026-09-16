@@ -1,8 +1,10 @@
 <?php
 use App\Models\User;
 use App\Http\Controllers\LivroController;
+use App\Http\Controllers\EventoController;
 use App\Models\Livro;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('home');
@@ -19,6 +21,11 @@ Route::get('/teste-orm', function (){
     ]);
     return User::all();
 });
+
+Route::get('/eventos', [EventoController::class, 'index']);
+Route::get('/eventos/novo', [EventoController::class, 'create']);
+Route::post('/eventos', [EventoController::class, 'store']);
+
 
 
 
